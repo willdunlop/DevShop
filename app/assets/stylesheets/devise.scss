@@ -1,5 +1,10 @@
 // THIS STYLESHEET CONTROLS ANY ELEMENTS RELATED TO DEVISE
 
+
+body {
+  background: image-url("Landing_Background.jpg");
+}
+
 .devise-heading {
   font-family: 'Montserrat', sans-serif;
   text-align: center;
@@ -10,7 +15,7 @@
   height: 100px;
 }
 .full-logo-large {
-  width: 40%;
+  width: 30%;
   height: 200px;
   background: image-url("DS-Logo-Transparent-Full.png") no-repeat;
   background-size: contain;
@@ -26,17 +31,74 @@
 
 }
 
-.log-button {
-  width: 80px;
-  height: 50px;
-  background-color: #A6728F;
-  color: #fff;
-  box-shadow: 2px 2px 2px 2px rgba(0,0,0,0.4);
-  border: none;
-  margin: 0 auto 0 auto;
+.button-container-1 {
+  margin: 10px auto 0 auto;
+  width: 300px;
+  height: 110px;
 }
 
-#user_email, #user_password {
+    .log-button {
+      width: 300px;
+      height: 50px;
+      background-color: #A6728F;
+      font-family: 'Raleway', sans-serif;
+      font-size: 18px;
+      color: #fff;
+      box-shadow: 2px 2px 2px 2px rgba(0,0,0,0.4);
+      border: none;
+      margin: 0 auto 0 auto;
+      transition-duration: 0.5s;
+    }
+
+      .log-button:hover {
+        background-color: #A52D34;
+        color: #fff;
+      }
+
+    .sign-up-button {
+      width: 145px;
+      height: 50px;
+      background-color: #c09cb0;
+      font-family: 'Raleway', sans-serif;
+      font-size: 14px;
+      color: #fff;
+      box-shadow: 2px 2px 2px 2px rgba(0,0,0,0.4);
+      border: none;
+      margin-top: 10px;
+      margin-right: 5px;
+      text-align: center;
+      line-height: 45px;
+      float: left;
+      transition-duration: 0.5s;
+
+    }
+      .sign-up-button:hover {
+        background-color: #c06c70;
+      }
+
+    .forgot-button {
+      width: 145px;
+      height: 50px;
+      background-color: #c09cb0;
+      font-family: 'Raleway', sans-serif;
+      font-size: 14px;
+      color: #fff;
+      box-shadow: 2px 2px 2px 2px rgba(0,0,0,0.4);
+      border: none;
+      margin-top: 10px;
+      margin-left: 5px;
+      text-align: center;
+      line-height: 45px;
+      float: left;
+      transition-duration: 0.5s;
+
+    }
+      .forgot-button:hover {
+        background-color: #c06c70;
+      }
+
+
+#user_email, #user_password, #user_password_confirmation {
   height: 40px;
   width: 300px;
   border-radius: 0;
