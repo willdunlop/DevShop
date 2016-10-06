@@ -6,6 +6,7 @@
   <thead>
     <tr>
       <th>User</th>
+      <th>Email</th>
       <th>First name</th>
       <th>Last name</th>
       <th>Birthday</th>
@@ -18,6 +19,7 @@
     <% @profiles.each do |profile| %>
       <tr>
         <td><%= profile.user %></td>
+        <td><%= profile.user.email %></td>
         <td><%= profile.first_name %></td>
         <td><%= profile.last_name %></td>
         <td><%= profile.birthday %></td>
@@ -31,5 +33,3 @@
 </table>
 
 <br>
-
-<%= link_to 'New Profile', new_profile_path %>

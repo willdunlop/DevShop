@@ -1,45 +1,47 @@
 
 <nav>
 <div class="nav">
-  <a href="/">
-  <div class="DS-logo"></div>
-  </a>
+  <div class="nav-contents-container">
+    <a href="/">
+    <div class="DS-logo"></div>
+    </a>
 
-    <!-- LOGIN/LOGOUT BUTTON -->
-    <% if user_signed_in? %>
+      <!-- LOGIN/LOGOUT BUTTON -->
+      <% if user_signed_in? %>
 
-      <%= link_to(destroy_user_session_path, :method => :delete) do%>
-      <div class="account-button">Logout</div>
+        <%= link_to(destroy_user_session_path, :method => :delete) do%>
+        <div class="account-button">Logout</div>
+        <% end %>
+
+      <% else %>
+
+        <%= link_to(new_user_session_path) do %>
+        <div class="account-button">Login</div>
+        <% end %>
+
       <% end %>
+      <!-- REGISTER/EDIT REGISTRATION BUTTON -->
+      <% if user_signed_in? %>
 
-    <% else %>
+        <%= link_to(edit_user_registration_path) do %>
+        <div class="account-button">Edit Acc.</div>
+        <% end %>
+      <% else %>
 
-      <%= link_to(new_user_session_path) do %>
-      <div class="account-button">Login</div>
+        <%= link_to(new_user_registration_path)  do %>
+        <div class="account-button">Register</div>
+        <% end %>
       <% end %>
+      <!-- LINK TO USERS PROFILE -->
+      <% if user_signed_in? %>
+        <% #if current_user.id == @profile.user.id %>
+            <%= link_to profile_path(current_user.id) do %>
+            <div class="account-button">Profile</div>
+          <% end %>
+          <% else %>
+          <% end %>
+          <% #2end %>
 
-    <% end %>
-    <!-- REGISTER/EDIT REGISTRATION BUTTON -->
-    <% if user_signed_in? %>
-
-      <%= link_to(edit_user_registration_path) do %>
-      <div class="account-button">Edit Acc.</div>
-      <% end %>
-    <% else %>
-
-      <%= link_to(new_user_registration_path)  do %>
-      <div class="account-button">Register</div>
-      <% end %>
-    <% end %>
-    <!-- LINK TO USERS PROFILE -->
-    <!-- <% if user_signed_in? %>
-
-      <%= link_to(current_user_profile_path) do %>
-      <div class="account-button">Profile</div>
-    <% end %>
-    <% else %>
-    <%end%> -->
-
-
+        </div>
 </div>
 </nav>
