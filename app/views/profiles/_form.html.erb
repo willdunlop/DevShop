@@ -32,6 +32,12 @@
     <%= f.text_area :description %>
   </div>
 
+  <div class="field">
+    <%= f.label :image %><br>
+    <%= f.file_field :image %>
+  </div>
+  
+
 <div class="button-container-1">
   <div class="actions">
     <%= f.submit "Update", class: "log-button" %>

@@ -1,3 +1,5 @@
+<div class="spacer"></div>
+
 <p id="notice"><%= notice %></p>
 
 <h1>Profiles</h1>
@@ -26,7 +28,6 @@
         <td><%= profile.description %></td>
         <td><%= link_to 'Show', profile %></td>
         <td><%= link_to 'Edit', edit_profile_path(profile) %></td>
-        <td><%= link_to 'Destroy', profile, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>

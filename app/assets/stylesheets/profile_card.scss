@@ -1,0 +1,53 @@
+
+// STYLESHEET FOR PROFILE CARDS
+
+.profile-card {
+  width: 600px;
+  height: 300px;
+  box-shadow: 2px 2px 2px 2px rgba(0,0,0,0.4);
+  margin: 0 auto 0 auto;
+  background-color: #fff;
+
+}
+
+  .profile-first-last-name {
+    width: 96%;
+    height: 40px;
+    border-bottom-style: solid;
+    border-width: thin;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 24px;
+    padding: 3px 3px 3px 3px;
+    margin: 0 auto 0 auto;
+
+
+  }
+
+  .profile-picture {
+    float: left;
+    height: 60%;
+    width: 300px;
+  }
+
+  .profile-info {
+    font-family: 'Montserrat', sans-serif;
+
+  }
+
+.edit-button {
+  width: 145px;
+  height: 50px;
+  background-color: #A6728F;
+  font-family: 'Raleway', sans-serif;
+  font-size: 14px;
+  color: #fff;
+  box-shadow: 2px 2px 2px 2px rgba(0,0,0,0.4);
+  border: none;
+  text-align: center;
+  line-height: 45px;
+  transition-duration: 0.5s;
+  margin: 10px auto 0 auto;
+}
+  .edit-button:hover {
+    background-color: #A52D34;
+  }
