@@ -1,5 +1,5 @@
 /* NAVBAR CSS STYLESHEET */
-
+/* LOGO COLOUR: #c02d2d */
 html, body {
   margin:0;
   padding:0;
@@ -12,9 +12,10 @@ html, body {
   border-bottom-style: solid;
   border-width: thin;
   // box-shadow: 0 0 3px 0;
-  background-color: #c02d2d;
-
+  background-color: #A6728F;
+  position: fixed;
   display: list-item;
+  margin-top: 0px;
 }
 
 
@@ -30,7 +31,8 @@ html, body {
   height: 100%;
   width: 100px;
   line-height: 45px;
-  background-color: #c02d2d;
+  font-family: 'Raleway', sans-serif;
+  background-color: #A6728F;
   float: right;
   text-align: center;
   color: #fff;

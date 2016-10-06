@@ -1,0 +1,55 @@
+// THIS STYLESHEET CONTROLS ANY ELEMENTS RELATED TO DEVISE
+
+.devise-heading {
+  font-family: 'Montserrat', sans-serif;
+  text-align: center;
+  font-size: 30px;
+}
+
+.spacer {
+  height: 100px;
+}
+.full-logo-large {
+  width: 40%;
+  height: 200px;
+  background: image-url("DS-Logo-Transparent-Full.png") no-repeat;
+  background-size: contain;
+  margin: 0px auto 0 auto;
+  padding-top: 40px;
+
+}
+
+.field {
+  margin: 10px auto 10px auto;
+  width: 300px;
+  font-family: 'Raleway', sans-serif;
+
+}
+
+.log-button {
+  width: 80px;
+  height: 50px;
+  background-color: #A6728F;
+  color: #fff;
+  box-shadow: 2px 2px 2px 2px rgba(0,0,0,0.4);
+  border: none;
+  margin: 0 auto 0 auto;
+}
+
+#user_email, #user_password {
+  height: 40px;
+  width: 300px;
+  border-radius: 0;
+  border-style: solid;
+  border-color: #A6728F;
+  background-color: #f6f0f3;
+  box-shadow: 0;
+  text-align: center;
+  transition-duration: 0.5s;
+}
+
+
+#user_remember_me {
+  border-radius: 0;
+
+}
