@@ -1,0 +1,35 @@
+
+<%= form_for(dev_corner) do |f| %>
+  <% if dev_corner.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(dev_corner.errors.count, "error") %> prohibited this dev_corner from being saved:</h2>
+
+      <ul>
+      <% dev_corner.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+
+
+  <div class="field">
+    <%= f.label :skills %>
+    <%= f.text_area :skills %>
+  </div>
+
+  <div class="field">
+    <%= f.label :experience %>
+    <%= f.text_area :experience %>
+  </div>
+
+  <div class="field">
+    <%= f.label :strengths %>
+    <%= f.text_area :strengths %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

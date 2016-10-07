@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :dev_corners
   resources :profiles
   get 'pages/home'
   root 'pages#home'

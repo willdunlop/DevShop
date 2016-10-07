@@ -42,6 +42,19 @@
           <% end %>
           <% #2end %>
 
+          <!-- LINK TO USERS DevCorner -->
+          <% if user_signed_in? %>
+            <% if  current_user.profile.dev_corner.nil?  %>
+              <%= link_to new_dev_corner_path do %>
+                <div class="account-become-button">Become a Dev</div>
+              <% end %>
+            <% else %>
+              <%= link_to dev_corner_path(current_user.profile) do %>
+              <div class="account-button">Your Shop</div>
+            <% end %>
+            <%end%>
+            <% else %>
+            <% end %>
         </div>
 </div>
 </nav>

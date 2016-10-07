@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  profile: one
+  skills: MyText
+  experience: MyText
+  strengths: MyText
+
+two:
+  profile: two
+  skills: MyText
+  experience: MyText
+  strengths: MyText

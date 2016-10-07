@@ -1,0 +1,44 @@
+<div class="spacer"></div>
+
+<p id="notice"><%= notice %></p>
+
+<div class="dc-container">
+  <div class="dc-container-top">
+    <div class="dc-profile-card">
+      <div class="profile-first-last-name">
+        <%= @dev_corner.profile.first_name %> <%= @dev_corner.profile.last_name %>
+      </div>
+      <div class="profile-picture">
+        <%= image_tag @dev_corner.profile.image, style: "width: 95%; height: auto; padding: 5px;" %>
+      </div>
+      <div class ="profile-info">
+        <p><b>Email:</b> <%= @dev_corner.profile.user.email %></p>
+        <p><b>Birthday:</b> <%= @dev_corner.profile.birthday %></p>
+        <h4 class="profile-info-desc">About <%= @dev_corner.profile.first_name %>:</h4>
+        <%= @dev_corner.profile.description %>
+      </div>
+    </div>
+
+    <div class="dc-box">
+      <p class="dc-skills-heading"><b>My Skills: </b></p>
+      <%= @dev_corner.skills %>
+    </div>
+  </div>
+
+  <div class="dc-container-bottom">
+    <div class="dc-box">
+      <p class="dc-skills-heading"><b>My Experience: </b></p>
+      <%= @dev_corner.experience %>
+    </div>
+    <div class="dc-box">
+      <p class="dc-skills-heading"><b>My Strengths: </b></p>
+      <%= @dev_corner.strengths %>
+    </div>
+  </div>
+</div>
+
+
+
+
+<%= link_to 'Edit', edit_dev_corner_path(@dev_corner) %> |
+<%= link_to 'Back', dev_corners_path %>

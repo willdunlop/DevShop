@@ -1,0 +1,1 @@
+json.partial! "dev_corners/dev_corner", dev_corner: @dev_corner

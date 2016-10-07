@@ -48,3 +48,20 @@ html, body {
       color: #fff;
 
     }
+
+.account-become-button {
+  height: 100%;
+  width: 125px;
+  line-height: 45px;
+  font-family: 'Raleway', sans-serif;
+  background-color: #A6728F;
+  float: right;
+  text-align: center;
+  color: #fff;
+  transition-duration: 0.5s;
+}
+    .account-become-button:hover {
+      background-color: #A52D34;
+      color: #fff;
+
+    }
