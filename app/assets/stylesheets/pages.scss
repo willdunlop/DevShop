@@ -1,3 +1,66 @@
 // Place all the styles related to the pages controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.logo-container {
+  width: 80%;
+  height: 150px;
+  margin: 0 auto 0 auto;
+  padding: 10px;
+  border-bottom-style: solid;
+  border-color: rgba(166,114,143,0.7);
+}
+
+  .full-logo-medium {
+    width: 350px;
+    height: 150px;
+    background: image-url("DS-Logo-Transparent-Full.png") no-repeat;
+    background-size: contain;
+    margin: 0 auto 0 auto;
+
+  }
+
+.home-container {
+  width: 80%;
+  height: auto;
+  margin: 25px auto 0 auto;
+  display: flex;
+}
+
+  .home-sidebar {
+    width: 15%;
+    height: auto;
+    border-color: #A6728F;
+    border-style: solid;
+    background-color: #f6f0f3;
+    box-shadow: 2px 2px 2px 2px rgba(0,0,0,0.4);
+    padding: 1%;
+    margin: 0 25px 0 0;
+    font-family: 'Montserrat', sans-serif;
+
+  }
+
+    .side-heading {
+      background: #A6728F;
+      color: #fff;
+      padding: 3px;
+
+    }
+
+  .intro-image {
+    background: image-url("full-stack-web-developer.jpeg") no-repeat;
+    background-size: cover;
+    width: 80%;
+    height: 600px;
+    box-shadow: 2px 2px 2px 2px rgba(0,0,0,0.4);
+    margin: 0 25px 0 0;
+
+  }
+    .image-slogan {
+      color: #744f64;
+      width: 35%;
+      height: 400px;
+      font-family: 'Neucha', bold;
+      font-size: 40px;
+      margin: 100px 0 0 50px;
+    }

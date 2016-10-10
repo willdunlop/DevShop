@@ -10,15 +10,25 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161010024954) do
+ActiveRecord::Schema.define(version: 20161010105529) do
 
   create_table "dev_corners", force: :cascade do |t|
     t.integer  "profile_id"
     t.text     "skills"
     t.text     "experience"
     t.text     "strengths"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at",                     null: false
+    t.datetime "updated_at",                     null: false
+    t.text     "user_css_input"
+    t.text     "user_html_input"
+    t.integer  "cached_votes_total", default: 0
+    t.integer  "cached_votes_score", default: 0
+    t.integer  "cached_votes_up",    default: 0
+    t.integer  "cached_votes_down",  default: 0
+    t.index ["cached_votes_down"], name: "index_dev_corners_on_cached_votes_down"
+    t.index ["cached_votes_score"], name: "index_dev_corners_on_cached_votes_score"
+    t.index ["cached_votes_total"], name: "index_dev_corners_on_cached_votes_total"
+    t.index ["cached_votes_up"], name: "index_dev_corners_on_cached_votes_up"
     t.index ["profile_id"], name: "index_dev_corners_on_profile_id"
   end
 

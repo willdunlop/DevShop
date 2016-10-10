@@ -48,6 +48,7 @@ class DevCornersController < ApplicationController
   # GET /dev_corners/1
   # GET /dev_corners/1.json
   def show
+    
   end
 
   # GET /dev_corners/new
@@ -107,6 +108,6 @@ class DevCornersController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def dev_corner_params
-      params.require(:dev_corner).permit(:profile_id, :skills, :experience, :strengths)
+      params.require(:dev_corner).permit(:profile_id, :skills, :experience, :strengths, :user_css_input, :user_html_input)
     end
 end

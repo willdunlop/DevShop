@@ -1,4 +1,25 @@
 <div class="spacer"></div>
 
-<h1>Pages#home</h1>
-<p>A pointless page that will later be deleted. Please enjoy it while you can.</p>
+<div class="logo-container">
+<div class="full-logo-medium"></div>
+</div>
+
+<div class="home-container">
+
+<div class="home-sidebar">
+<p class="side-heading"><b>Top Developers: </b></p>
+<div class="top-devs">
+  <% @td_rank = 1 %>
+  <% DevCorner.order(:cached_votes_up).first(5).each do |top| %>
+    <p><%= @td_rank %>. <%= top.profile.first_name %> <%= top.profile.last_name %></p>
+    <% @td_rank = @td_rank + 1 %>
+  <% end %>
+</div>
+</div>
+
+<div class="intro-image">
+  <p class="image-slogan">Begin your Web Development career right here, right now.</p>
+</div>
+
+
+</div>

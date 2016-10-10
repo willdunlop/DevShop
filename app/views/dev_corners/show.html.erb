@@ -1,12 +1,68 @@
 <div class="spacer"></div>
+<div class = "dev-panel">
+  <%= link_to edit_dev_corner_path(@dev_corner) do %>
+    <div class="dev-panel-button">Edit Your Shop</div>
+  <% end %>
+  <div class="dev-panel-button">View Transactions</div>
+  <div class="dev-panel-button">Another Button</div>
+
+
+</div>
 
 <p id="notice"><%= notice %></p>
+
 
 <div class="dc-container">
   <div class="dc-container-top">
     <div class="dc-profile-card">
       <div class="profile-first-last-name">
         <%= @dev_corner.profile.first_name %> <%= @dev_corner.profile.last_name %>
+        <div class="dc-rating">
+        <% if user_signed_in? %>
+          <% if current_user.voted_for? @dev_corner %>
+            <% a = Vote.find_by(:voter_id => current_user.id, :votable_id => @dev_corner.id) %>
+            <% if a.vote_weight == 1 %>
+            <%= awesome_link('fa-star', voteone_dev_corner_path(@dev_corner), method: :put) %>
+            <%= awesome_link('fa-star-o', votetwo_dev_corner_path(@dev_corner), method: :put) %>
+            <%= awesome_link('fa-star-o', votethree_dev_corner_path(@dev_corner), method: :put) %>
+            <%= awesome_link('fa-star-o', votefour_dev_corner_path(@dev_corner), method: :put) %>
+            <%= awesome_link('fa-star-o', votefive_dev_corner_path(@dev_corner), method: :put) %>
+            <% elsif a.vote_weight == 2 %>
+            <%= awesome_link('fa-star', voteone_dev_corner_path(@dev_corner), method: :put) %>
+            <%= awesome_link('fa-star', votetwo_dev_corner_path(@dev_corner), method: :put) %>
+            <%= awesome_link('fa-star-o', votethree_dev_corner_path(@dev_corner), method: :put) %>
+            <%= awesome_link('fa-star-o', votefour_dev_corner_path(@dev_corner), method: :put) %>
+            <%= awesome_link('fa-star-o', votefive_dev_corner_path(@dev_corner), method: :put) %>
+            <% elsif a.vote_weight == 3 %>
+            <%= awesome_link('fa-star', voteone_dev_corner_path(@dev_corner), method: :put) %>
+            <%= awesome_link('fa-star', votetwo_dev_corner_path(@dev_corner), method: :put) %>
+            <%= awesome_link('fa-star', votethree_dev_corner_path(@dev_corner), method: :put) %>
+            <%= awesome_link('fa-star-o', votefour_dev_corner_path(@dev_corner), method: :put) %>
+            <%= awesome_link('fa-star-o', votefive_dev_corner_path(@dev_corner), method: :put) %>
+            <% elsif a.vote_weight == 4 %>
+            <%= awesome_link('fa-star', voteone_dev_corner_path(@dev_corner), method: :put) %>
+            <%= awesome_link('fa-star', votetwo_dev_corner_path(@dev_corner), method: :put) %>
+            <%= awesome_link('fa-star', votethree_dev_corner_path(@dev_corner), method: :put) %>
+            <%= awesome_link('fa-star', votefour_dev_corner_path(@dev_corner), method: :put) %>
+            <%= awesome_link('fa-star-o', votefive_dev_corner_path(@dev_corner), method: :put) %>
+            <% elsif a.vote_weight == 5 %>
+            <%= awesome_link('fa-star', voteone_dev_corner_path(@dev_corner), method: :put) %>
+            <%= awesome_link('fa-star', votetwo_dev_corner_path(@dev_corner), method: :put) %>
+            <%= awesome_link('fa-star', votethree_dev_corner_path(@dev_corner), method: :put) %>
+            <%= awesome_link('fa-star', votefour_dev_corner_path(@dev_corner), method: :put) %>
+            <%= awesome_link('fa-star', votefive_dev_corner_path(@dev_corner), method: :put) %>
+            <% end %>
+            <% else %>
+            <%= awesome_link('fa-star-o', voteone_dev_corner_path(@dev_corner), method: :put) %>
+            <%= awesome_link('fa-star-o', votetwo_dev_corner_path(@dev_corner), method: :put) %>
+            <%= awesome_link('fa-star-o', votethree_dev_corner_path(@dev_corner), method: :put) %>
+            <%= awesome_link('fa-star-o', votefour_dev_corner_path(@dev_corner), method: :put) %>
+            <%= awesome_link('fa-star-o', votefive_dev_corner_path(@dev_corner), method: :put) %>
+          <% end %>
+        <% end %>
+
+        <%= @dev_corner.score %>
+        </div>
       </div>
       <div class="profile-picture">
         <%= image_tag @dev_corner.profile.image, style: "width: 95%; height: auto; padding: 5px;" %>
@@ -17,6 +73,7 @@
         <h4 class="profile-info-desc">About <%= @dev_corner.profile.first_name %>:</h4>
         <%= @dev_corner.profile.description %>
       </div>
+
     </div>
 
     <div class="dc-box">
@@ -35,59 +92,11 @@
       <%= @dev_corner.strengths %>
     </div>
   </div>
+
 </div>
 
-<div class="dc-rating">
-<% if user_signed_in? %>
-  <% if current_user.voted_for? @dev_corner %>
-    <% a = Vote.find_by(:voter_id => current_user.id, :votable_id => @dev_corner.id) %>
-    <% if a.vote_weight == 1 %>
-    <%= awesome_link('fa-star', voteone_dev_corner_path(@dev_corner), method: :put) %>
-    <%= awesome_link('fa-star-o', votetwo_dev_corner_path(@dev_corner), method: :put) %>
-    <%= awesome_link('fa-star-o', votethree_dev_corner_path(@dev_corner), method: :put) %>
-    <%= awesome_link('fa-star-o', votefour_dev_corner_path(@dev_corner), method: :put) %>
-    <%= awesome_link('fa-star-o', votefive_dev_corner_path(@dev_corner), method: :put) %>
-    <% elsif a.vote_weight == 2 %>
-    <%= awesome_link('fa-star', voteone_dev_corner_path(@dev_corner), method: :put) %>
-    <%= awesome_link('fa-star', votetwo_dev_corner_path(@dev_corner), method: :put) %>
-    <%= awesome_link('fa-star-o', votethree_dev_corner_path(@dev_corner), method: :put) %>
-    <%= awesome_link('fa-star-o', votefour_dev_corner_path(@dev_corner), method: :put) %>
-    <%= awesome_link('fa-star-o', votefive_dev_corner_path(@dev_corner), method: :put) %>
-    <% elsif a.vote_weight == 3 %>
-    <%= awesome_link('fa-star', voteone_dev_corner_path(@dev_corner), method: :put) %>
-    <%= awesome_link('fa-star', votetwo_dev_corner_path(@dev_corner), method: :put) %>
-    <%= awesome_link('fa-star', votethree_dev_corner_path(@dev_corner), method: :put) %>
-    <%= awesome_link('fa-star-o', votefour_dev_corner_path(@dev_corner), method: :put) %>
-    <%= awesome_link('fa-star-o', votefive_dev_corner_path(@dev_corner), method: :put) %>
-    <% elsif a.vote_weight == 4 %>
-    <%= awesome_link('fa-star', voteone_dev_corner_path(@dev_corner), method: :put) %>
-    <%= awesome_link('fa-star', votetwo_dev_corner_path(@dev_corner), method: :put) %>
-    <%= awesome_link('fa-star', votethree_dev_corner_path(@dev_corner), method: :put) %>
-    <%= awesome_link('fa-star', votefour_dev_corner_path(@dev_corner), method: :put) %>
-    <%= awesome_link('fa-star-o', votefive_dev_corner_path(@dev_corner), method: :put) %>
-    <% elsif a.vote_weight == 5 %>
-    <%= awesome_link('fa-star', voteone_dev_corner_path(@dev_corner), method: :put) %>
-    <%= awesome_link('fa-star', votetwo_dev_corner_path(@dev_corner), method: :put) %>
-    <%= awesome_link('fa-star', votethree_dev_corner_path(@dev_corner), method: :put) %>
-    <%= awesome_link('fa-star', votefour_dev_corner_path(@dev_corner), method: :put) %>
-    <%= awesome_link('fa-star', votefive_dev_corner_path(@dev_corner), method: :put) %>
-    <% end %>
-    <% else %>
-    <%= awesome_link('fa-star-o', voteone_dev_corner_path(@dev_corner), method: :put) %>
-    <%= awesome_link('fa-star-o', votetwo_dev_corner_path(@dev_corner), method: :put) %>
-    <%= awesome_link('fa-star-o', votethree_dev_corner_path(@dev_corner), method: :put) %>
-    <%= awesome_link('fa-star-o', votefour_dev_corner_path(@dev_corner), method: :put) %>
-    <%= awesome_link('fa-star-o', votefive_dev_corner_path(@dev_corner), method: :put) %>
-  <% end %>
-<% end %>
 
-<%= @dev_corner.score %>
-</div>
 
 <!-- <script src="lib/codemirror.js"></script>
 <link rel="stylesheet" href="lib/codemirror.css">
 <script src="mode/javascript/javascript.js"></script> -->
-
-
-<%= link_to 'Edit', edit_dev_corner_path(@dev_corner) %> |
-<%= link_to 'Back', dev_corners_path %>

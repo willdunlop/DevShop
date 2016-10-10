@@ -41,9 +41,19 @@
 
 <div class="button-container-1">
     <%= f.submit "Update", class: "log-button" %>
-    <%= link_to new_dev_corner_path do %>
-      <div class="dev-button">Become a developer</div>
-    <% end %>
+    <% if user_signed_in? %>
+      <% if  current_user.profile.dev_corner.nil?  %>
+        <%= link_to new_dev_corner_path do %>
+          <div class="dev-button">Become a Dev</div>
+        <% end %>
+      <% else %>
+        <%= link_to dev_corner_path(current_user.profile) do %>
+        <div class="dev-button">Your Shop</div>
+      <% end %>
+      <%end%>
+      <% else %>
+      <% end %>
+
 
 </div>
 <% end %>

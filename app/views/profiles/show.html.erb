@@ -5,6 +5,12 @@
 <div class="profile-card">
   <div class="profile-first-last-name">
     <%= @profile.first_name %> <%= @profile.last_name %>
+    <div class="dc-rating">
+      <% if current_user.profile.dev_corner.nil? %>
+      <% else %>
+      Dev Rating:  <%= @profile.dev_corner.score %> Stars
+      <% end %>
+    </div>
   </div>
   <div class="profile-picture">
     <%= image_tag @profile.image, style: "width: 95%; height: auto; padding: 5px;" %>

@@ -2,8 +2,8 @@
 // STYLESHEET FOR PROFILE CARDS
 
 .profile-card {
-  width: 600px;
-  height: 350px;
+  width: 900px;
+  height: 400px;
   box-shadow: 2px 2px 2px 2px rgba(0,0,0,0.4);
   margin: 0 auto 0 auto;
   background-color: #fff;
@@ -13,6 +13,7 @@
   .profile-first-last-name {
     width: 96%;
     height: 40px;
+    display: flex;
     border-bottom-style: solid;
     border-width: thin;
     font-family: 'Montserrat', sans-serif;
@@ -26,7 +27,7 @@
   .profile-picture {
     float: left;
     height: 80%;
-    width: 300px;
+    width: 250px;
   }
 
   .profile-info {
@@ -72,3 +73,7 @@
     background-color: #A52D34;
     color: #fff;
   }
+
+.dc-rating {
+  margin-left: 60px;
+}

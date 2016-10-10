@@ -49,7 +49,7 @@
                 <div class="account-become-button">Become a Dev</div>
               <% end %>
             <% else %>
-              <%= link_to dev_corner_path(current_user.profile) do %>
+              <%= link_to dev_corner_path(current_user.profile.dev_corner.id) do %>
               <div class="account-button">Your Shop</div>
             <% end %>
             <%end%>
