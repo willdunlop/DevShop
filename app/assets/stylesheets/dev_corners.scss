@@ -3,29 +3,30 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 .dc-container{
-  width: 80%;
+  width: 65%;
   height: 900px;
   margin: 0 auto 0 auto;
+  display: flex;
 }
 .dc-profile-card {
-  width: 600px;
+  width: 80%;
   height: 350px;
   box-shadow: 2px 2px 2px 2px rgba(0,0,0,0.4);
-  float: left;
+  // float: left;
   background-color: #fff;
-  margin: 5px 5px 5px 5px;
+  margin: 20px 5px 5px 5px;
 }
 
 .dc-box {
-  width: 500px;
+  width: 80%;
   height: 350px;
   box-shadow: 2px 2px 2px 2px rgba(0,0,0,0.4);
   background-color: rgba(115,153,216,0.8);
   border-style: solid;
   border-color: #506b97;
   border-radius: 2%;
-  float: left;
-  margin: 5px 5px 5px 5px;
+  // float: left;
+  margin: 20px 5px 5px 5px;
 
 
 }

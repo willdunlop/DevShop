@@ -7,5 +7,7 @@ class User < ApplicationRecord
   has_one :profile
 
   after_create :create_profile
-  
+
+  acts_as_voter
+
 end

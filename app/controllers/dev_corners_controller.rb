@@ -1,6 +1,44 @@
 class DevCornersController < ApplicationController
   before_action :set_dev_corner, only: [:show, :edit, :update, :destroy]
 
+# Rating Functions
+  def voteone
+    @dev_corner = DevCorner.find(params[:id])
+    @dev_corner.vote_by :voter => current_user, :vote_weight => 1
+    redirect_to dev_corners_path
+  end
+
+  def votetwo
+    @dev_corner = DevCorner.find(params[:id])
+    @dev_corner.vote_by :voter => current_user, :vote_weight => 2
+    redirect_to dev_corners_path
+  end
+
+  def votethree
+    @dev_corner = DevCorner.find(params[:id])
+    @dev_corner.vote_by :voter => current_user, :vote_weight => 3
+    redirect_to dev_corners_path
+  end
+
+  def votefour
+    @dev_corner = DevCorner.find(params[:id])
+    @dev_corner.vote_by :voter => current_user, :vote_weight => 4
+    redirect_to dev_corners_path
+  end
+
+  def votefive
+    @dev_corner = DevCorner.find(params[:id])
+    @dev_corner.vote_by :voter => current_user, :vote_weight => 5
+    redirect_to dev_corners_path
+  end
+
+  def unvote
+    @dev_corner = DevCorner.find(params[:id])
+    @dev_corner.unvote_by current_user
+    redirect_to dev_corners_path
+  end
+
+
   # GET /dev_corners
   # GET /dev_corners.json
   def index
