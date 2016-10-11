@@ -10,8 +10,8 @@
 <p class="side-heading"><b>Top Developers: </b></p>
 <div class="top-devs">
   <% @td_rank = 1 %>
-  <% DevCorner.order(:cached_votes_up).first(5).each do |top| %>
-    <p><%= @td_rank %>. <%= top.profile.first_name %> <%= top.profile.last_name %></p>
+  <% DevCorner.order(:cached_votes_score).first(5).reverse.each do |top| %>
+    <p><%= @td_rank %>. <%= top.profile.first_name %> <%= top.profile.last_name %> - <%= top.score %></p>
     <% @td_rank = @td_rank + 1 %>
   <% end %>
 </div>
