@@ -2,6 +2,17 @@
 
 <p id="notice"><%= notice %></p>
 
+<%= form_tag(dev_corners_path, :method => "get", id: "search-form") do %>
+<%= text_field_tag :search, params[:search], placeholder: "Search Devs" %>
+<%= submit_tag "Search" %>
+<% end %>
+
+<% if @dev_corners.present? %>
+  <%= @dev_corners %>
+<% else %>
+  <p>There are no Developers containing the term(s) <%= params[:search] %>.</p>
+<% end %>
+
 <h1>Dev Corners</h1>
 
 <table>

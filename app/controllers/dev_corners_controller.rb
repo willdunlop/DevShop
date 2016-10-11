@@ -43,12 +43,22 @@ class DevCornersController < ApplicationController
   # GET /dev_corners.json
   def index
     @dev_corners = DevCorner.all
+    if params[:search]
+      @dev_corners = DevCorner.search(params[:search]).order("created_at DESC")
+    else
+      @dev_corners = DevCorner.all.order('created_at DESC')
+    end
   end
 
   # GET /dev_corners/1
   # GET /dev_corners/1.json
   def show
-    
+    @dev_corner = DevCorner.find(params[:id])
+
+    respond_to do |format|
+      format.html
+      format.css
+    end
   end
 
   # GET /dev_corners/new

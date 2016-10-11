@@ -1,4 +1,15 @@
 <div class="spacer"></div>
+<%= stylesheet_link_tag dev_corner_path(@dev_corner.user_css_input, "css", id: @dev_corner.profile.id) %>
+
+<style>
+
+    <%= @dev_corner.user_css_input %>
+  </style>
+
+  <html>
+  <%= @dev_corner.user_html_input %>
+  </html>
+
 <div class = "dev-panel">
   <%= link_to edit_dev_corner_path(@dev_corner) do %>
     <div class="dev-panel-button">Edit Your Shop</div>
@@ -76,13 +87,14 @@
 
     </div>
 
+
+  </div>
+
+  <div class="dc-container-bottom">
     <div class="dc-box">
       <p class="dc-skills-heading"><b>My Skills: </b></p>
       <%= @dev_corner.skills %>
     </div>
-  </div>
-
-  <div class="dc-container-bottom">
     <div class="dc-box">
       <p class="dc-skills-heading"><b>My Experience: </b></p>
       <%= @dev_corner.experience %>

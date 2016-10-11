@@ -8,4 +8,10 @@ class DevCorner < ApplicationRecord
   def self.highest_voted
     self.order("cached_votes_score DESC")
   end
+
+  def self.search(search)
+    where("first_name LIKE ?", "%#{search}%")
+
+  end
+
 end
