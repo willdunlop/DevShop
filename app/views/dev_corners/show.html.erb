@@ -1,8 +1,7 @@
 <div class="spacer"></div>
 <%= stylesheet_link_tag dev_corner_path(@dev_corner.user_css_input, "css", id: @dev_corner.profile.id) %>
 
-<style>
-
+  <style>
     <%= @dev_corner.user_css_input %>
   </style>
 
@@ -10,15 +9,16 @@
   <%= @dev_corner.user_html_input %>
   </html>
 
+<% if current_user.profile.dev_corner.id == @dev_corner.id %>
 <div class = "dev-panel">
   <%= link_to edit_dev_corner_path(@dev_corner) do %>
     <div class="dev-panel-button">Edit Your Shop</div>
   <% end %>
   <div class="dev-panel-button">View Transactions</div>
   <div class="dev-panel-button">Another Button</div>
-
-
 </div>
+<% else %>
+<% end %>
 
 <p id="notice"><%= notice %></p>
 
@@ -76,7 +76,7 @@
         </div>
       </div>
       <div class="profile-picture">
-        <%= image_tag @dev_corner.profile.image, style: "width: 65%; height: 100; padding: 5px;" %>
+        <%= image_tag @dev_corner.profile.image, style: "width: auto; height: 150px; padding: 5px;" %>
       </div>
       <div class ="profile-info">
         <p><b>Email:</b> <%= @dev_corner.profile.user.email %></p>

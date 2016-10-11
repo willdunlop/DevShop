@@ -1,8 +1,14 @@
 <div class="spacer"></div>
 
+<%if current_user.profile.dev_corner.id == @dev_corner.id %>
 <h1>Editing Dev Corner</h1>
 
-<%= render 'form', dev_corner: @dev_corner %>
-
-<%= link_to 'Show', @dev_corner %> |
-<%= link_to 'Back', dev_corners_path %>
+  <%= render 'form', dev_corner: @dev_corner %>
+<% else %>
+  <div class="unauthorised">
+    <p class="unauth-heading"> <b>ACCESS DENIED!</b> </p>
+    You are not authorised to be here and you shouldn't be trying.
+    Your activity has been logged... Papa William is now watching your every move.
+    <p>Tread carefully</p>
+  </div>
+  <% end %>

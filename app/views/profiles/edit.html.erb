@@ -1,8 +1,15 @@
 <div class="spacer"></div>
+<%if current_user.profile.id == @profile.id %>
 
 <h1>Editing Profile</h1>
 
 <%= render 'form', profile: @profile %>
 
-<%= link_to 'Show', @profile %> |
-<%= link_to 'Back', profiles_path %>
+<% else %>
+<div class="unauthorised">
+  <p class="unauth-heading"> <b>ACCESS DENIED!</b> </p>
+  You are not authorised to be here and you shouldn't be trying.
+  Your activity has been logged... Papa William is now watching your every move.
+  <p>Tread carefully</p>
+</div>
+<% end %>
