@@ -2,45 +2,59 @@
 
 <p id="notice"><%= notice %></p>
 
-<%= form_tag(dev_corners_path, :method => "get", id: "search-form") do %>
+<%= form_tag(profiles_path, :method => "get", id: "search-form") do %>
 <%= text_field_tag :search, params[:search], placeholder: "Search Devs" %>
 <%= submit_tag "Search" %>
 <% end %>
 
-<% if @dev_corners.present? %>
-  <%= @dev_corners %>
-<% else %>
-  <p>There are no Developers containing the term(s) <%= params[:search] %>.</p>
+<% if @profiles.present? %>
+  <% if @profiles.dev_corner.nil? %>
+  <% else %>
+    <%= @dev_corners %>
+    <% end %>
+  <% else %>
+    <p>There are no Developers containing the term(s) <%= params[:search] %>.</p>
 <% end %>
 
-<h1>Dev Corners</h1>
+<h1 class="shops-heading">The Shops</h1>
 
-<table>
-  <thead>
-    <tr>
-      <th>Profile</th>
-      <th>Skills</th>
-      <th>Experience</th>
-      <th>Strengths</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
 
-  <tbody>
     <% @dev_corners.each do |dev_corner| %>
-      <tr>
-        <td><%= dev_corner.profile %></td>
-        <td><%= dev_corner.skills %></td>
-        <td><%= dev_corner.experience %></td>
-        <td><%= dev_corner.strengths %></td>
-        <td><%= link_to 'Show', dev_corner %></td>
-        <td><%= link_to 'Edit', edit_dev_corner_path(dev_corner) %></td>
-        <td><%= link_to 'Destroy', dev_corner, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
+    <div class="card-seperator"></div>
+
+    <% if dev_corner.profile.dev_corner.nil? %>
+    <% else %>
+    <div class="dc-index-container">
+    <div class="shop-bg"></div>
+      <div class="mini-profile-card">
+        <div class="profile-first-last-name">
+          <% if dev_corner.profile.dev_corner.nil? %>
+          <% else %>
+            <div class="certified"></div>
+            <div class="certified-label">Certified Developer</div>
+          <% end %>
+          <%= dev_corner.profile.first_name %> <%= dev_corner.profile.last_name %>
+          <div class="dc-rating">
+            Dev Rating:  <%= dev_corner.profile.dev_corner.score %> Stars
+          </div>
+        </div>
+        <div class="profile-picture">
+          <%= image_tag dev_corner.profile.image, style: "width: 95%; height: auto; padding: 5px;" %>
+        </div>
+        <div class ="profile-info">
+          <p><b>Email:</b> <%= dev_corner.profile.user.email %></p>
+          <p><b>Birthday:</b> <%= dev_corner.profile.birthday %></p>
+          <h4 class="profile-info-desc">About <%= dev_corner.profile.first_name %>:</h4>
+          <%= dev_corner.profile.description %>
+        </div>
+      </div>
+
+           <%= link_to  dev_corner do%>
+           <div class="edit-button">View</div>
+           <% end %>
+         </div>
+      <% end %>
     <% end %>
-  </tbody>
-</table>
+
 
 <br>
-
-<%= link_to 'New Dev Corner', new_dev_corner_path %>

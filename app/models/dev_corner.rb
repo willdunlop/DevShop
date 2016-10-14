@@ -9,9 +9,6 @@ class DevCorner < ApplicationRecord
     self.order("cached_votes_score DESC")
   end
 
-  def self.search(search)
-    where("first_name LIKE ?", "%#{search}%")
-
-  end
+  
 
 end

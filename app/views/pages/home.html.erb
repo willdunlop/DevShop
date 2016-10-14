@@ -5,18 +5,26 @@
 </div>
 
 <div class="home-container">
-
-<div class="home-sidebar">
-<p class="side-heading"><b>Top Developers: </b></p>
-<div class="top-devs">
-  <% @td_rank = 1 %>
-  <% DevCorner.order(:cached_votes_score).first(5).reverse.each do |top| %>
-    <p><%= @td_rank %>. <%= top.profile.first_name %> <%= top.profile.last_name %> - <%= top.score %></p>
-    <% @td_rank = @td_rank + 1 %>
-  <% end %>
+<div class="sidebar-container">
+  <div class="home-sidebar">
+  <p class="side-heading"><b>Top Developers: </b></p>
+  <div class="top-devs">
+    <% @td_rank = 1 %>
+    <% DevCorner.order(:cached_votes_score).first(5).reverse.each do |top| %>
+      <p><%= @td_rank %>. <%= top.profile.first_name %> <%= top.profile.last_name %> - <%= top.score %></p>
+      <% @td_rank = @td_rank + 1 %>
+    <% end %>
+  </div>
+  </div>
+ 
+  <div class="home-sidebar">
+    <p class="side-heading"><b>Browse for Developers</b></p>
+    <p>The developers here at DevShop are trained proffessionals from all around the world. They have spent many hours customizing their shop for you to see. Why not check them out?</p>
+       <%= link_to dev_corners_path do%>
+        <div class="edit-button">Browse</div>
+        <% end %>
+  </div>
 </div>
-</div>
-
 <div class="intro-image">
   <p class="image-slogan">Begin your Web Development career right here, right now.</p>
 </div>
