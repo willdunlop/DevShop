@@ -18,8 +18,7 @@ gem 'coffee-rails', '~> 4.2'
 # gem 'therubyracer', platforms: :ruby
 # Devise used for login and registration of user accounts
 gem 'devise'
-# Materialze as a CSS framework
-# gem 'materialize-sass'
+
 # carrierwave to handle the uploading of profile pictures
 gem 'carrierwave', '>= 1.0.0.beta', '< 2.0'
 # Codemirror, interface for uses to edit their profile CSS

@@ -5,6 +5,10 @@ Rails.application.routes.draw do
   root 'pages#home'
   devise_for :users
 
+  resources :conversations do
+  resources :messages
+ end
+
   resources :dev_corners do
     member do
       put "voteone", to: "dev_corners#voteone"
