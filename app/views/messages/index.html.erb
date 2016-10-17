@@ -1,6 +1,4 @@
-<% if @over_ten %>
- <%= link_to 'Show Previous', '?m=all' %>
-<% end %>
+
 
 <% if @message.conversation.sender_id == current_user.id %>
   <p class="devise-heading"> Conversation with <%=@message.conversation.recipient.profile.first_name %> </p>
@@ -8,17 +6,26 @@
   <p class="devise-heading"> Conversation with <%=@message.conversation.sender.profile.first_name %> </p>
 <% end %>
 
+<% if @over_ten %>
+<div class="sp-div">
+ <%= link_to 'Show Previous', '?m=all' %>
+ </div>
+<% end %>
 
-<div class="message-container">
+<div id="message-scroll" class="message-container">
  <% @messages.each do |message| %>
   <% if message.body %>
    <% user = User.find(message.user_id) %>
    <div class="item">
     <div class="content">
-     <div class="header"><strong><%= user.profile.first_name %></strong>     <%= message.message_time %></div>
+     <div class="header">
+       <% if user.profile.dev_corner.nil? %>
+       <div class="space"></div><strong><%= user.profile.first_name %> <%= user.profile.last_name %></strong> <%= message.message_time %>
+        <% else %>
+        <div class="certified"></div> <strong><%= user.profile.first_name %> <%= user.profile.last_name %></strong> <%= message.message_time %>
+        <%end%> </div>
       <div class="list">
        <div class="item">
-        <i class="right triangle icon"></i>
          <%= message.body %>
       </div>
     </div>
@@ -30,11 +37,11 @@
 
 <%= form_for [@conversation, @message], html: {class: "ui reply form"} do |f| %>
  <div class="message-box">
-   <%= f.text_area :body, class: "form-control", placeholder: "Write your message here..." %>
+   <%= f.text_field :body, class: "form-control", autofocus: true, autocomplete: :off, placeholder: "Write your message here..." %>
  </div>
  <%= f.text_field :user_id, value: current_user.id, type: "hidden" %>
  <div class="button-container-1">
-   <%= f.submit "Add Reply", class: "log-button" %>
+   <%= f.submit "Send", class: "log-button" %>
  </div>
 
 <% end %>

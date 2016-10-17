@@ -6,6 +6,7 @@
   height: auto;
   display: flex;
   margin: 20px auto 20px auto;
+  padding: 1%;
 }
 
 .account-container {
@@ -15,6 +16,7 @@
   border-color: #A6728F;
   margin-right: 25px;
   background-color: #ddd;
+  padding: 1%
 
 
 }
@@ -26,6 +28,7 @@
   border-color: #A6728F;
   margin-left: 25px;
   background-color: #ddd;
+  padding: 1%;
 
 }
 
@@ -37,7 +40,7 @@
   background-size: cover;
   margin-right: 10px;
   transition-duration: 0.5s;
-
+  float: left;
 }
 
   .certified-label {
@@ -163,7 +166,7 @@
   text-align: center;
   line-height: 45px;
   transition-duration: 0.5s;
-  margin: 10px auto 0 auto;
+  margin: 10px auto 10px auto;
 }
 
   .dev-button:hover {

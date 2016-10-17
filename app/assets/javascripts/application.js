@@ -17,3 +17,9 @@
 //= require codemirror
 //= require codemirror/modes/javascript
 //= require codemirror/modes/ruby
+
+$(function() {
+  var wtf    = $('#message-scroll');
+  var height = wtf[0].scrollHeight;
+  wtf.scrollTop(height);
+});

@@ -7,7 +7,8 @@
   <html>
   <%= @dev_corner.user_html_input %>
   </html>
-
+<% if current_user.profile.dev_corner.nil? %>
+<% else %>
 <% if current_user.profile.dev_corner.id == @dev_corner.id %>
 <div class = "dev-panel">
   <%= link_to edit_dev_corner_path(@dev_corner) do %>
@@ -17,6 +18,7 @@
   <div class="dev-panel-button">Another Button</div>
 </div>
 <% else %>
+<% end %>
 <% end %>
 
 <p id="notice"><%= notice %></p>
@@ -86,7 +88,10 @@
       </div>
     </div>
   </div>
-
+  <div class="dc-box">
+    <p class="dc-skills-heading"><b>My Strengths: </b></p>
+    <%= @dev_corner.strengths %>
+  </div>
 
   </div>
 
@@ -99,11 +104,10 @@
       <p class="dc-skills-heading"><b>My Experience: </b></p>
       <%= @dev_corner.experience %>
     </div>
-    <div class="dc-box">
-      <p class="dc-skills-heading"><b>My Strengths: </b></p>
-      <%= @dev_corner.strengths %>
-    </div>
+
   </div>
 </div>
 
-<%= link_to 'Message me!', conversations_path(sender_id: current_user.id, recipient_id: @dev_corner.profile.user.id), method: 'post'%>
+<%= link_to conversations_path(sender_id: current_user.id, recipient_id: @dev_corner.profile.user.id), method: 'post' do %>
+<div class="dev-button">Message Me!</div>
+<%end%>
