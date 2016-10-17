@@ -32,29 +32,38 @@
         <div class="account-button">Register</div>
         <% end %>
       <% end %>
-      <!-- LINK TO USERS PROFILE -->
+
+      <!-- LINK TO INBOX -->
       <% if user_signed_in? %>
-        <% #if current_user.id == @profile.user.id %>
-            <%= link_to profile_path(current_user.id) do %>
-            <div class="account-button">Profile</div>
+            <%= link_to conversations_path do %>
+            <div class="account-button">Inbox</div>
           <% end %>
           <% else %>
           <% end %>
-          <% #2end %>
 
-          <!-- LINK TO USERS DevCorner -->
-          <% if user_signed_in? %>
-            <% if  current_user.profile.dev_corner.nil?  %>
-              <%= link_to new_dev_corner_path do %>
-                <div class="account-become-button">Become a Dev</div>
-              <% end %>
-            <% else %>
-              <%= link_to dev_corner_path(current_user.profile.dev_corner.id) do %>
-              <div class="account-button">Your Shop</div>
+      <!-- LINK TO USERS DevCorner -->
+      <% if user_signed_in? %>
+        <% if  current_user.profile.dev_corner.nil?  %>
+          <%= link_to new_dev_corner_path do %>
+            <div class="account-become-button">Become a Dev</div>
+          <% end %>
+        <% else %>
+          <%= link_to dev_corner_path(current_user.profile.dev_corner.id) do %>
+          <div class="account-button">Your Shop</div>
+        <% end %>
+        <%end%>
+        <% else %>
+        <% end %>
+
+        <!-- LINK TO BROWSE USERS -->
+        <% if user_signed_in? %>
+              <%= link_to dev_corners_path do %>
+              <div class="account-button">Browse</div>
             <% end %>
-            <%end%>
             <% else %>
             <% end %>
+
+
         </div>
 </div>
 </nav>

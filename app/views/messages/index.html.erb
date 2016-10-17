@@ -2,8 +2,14 @@
  <%= link_to 'Show Previous', '?m=all' %>
 <% end %>
 
+<% if @message.conversation.sender_id == current_user.id %>
+  <p class="devise-heading"> Conversation with <%=@message.conversation.recipient.profile.first_name %> </p>
+<% else %>
+  <p class="devise-heading"> Conversation with <%=@message.conversation.sender.profile.first_name %> </p>
+<% end %>
 
-<div class="segment">
+
+<div class="message-container">
  <% @messages.each do |message| %>
   <% if message.body %>
    <% user = User.find(message.user_id) %>
@@ -23,13 +29,12 @@
 </div>
 
 <%= form_for [@conversation, @message], html: {class: "ui reply form"} do |f| %>
-
- <div class="fieldd">
-   <%= f.text_area :body, class: "form-control" %>
+ <div class="message-box">
+   <%= f.text_area :body, class: "form-control", placeholder: "Write your message here..." %>
  </div>
  <%= f.text_field :user_id, value: current_user.id, type: "hidden" %>
- <div>
-   <%= f.submit "Add Reply", class: "ui blue labeled submit icon button" %>
+ <div class="button-container-1">
+   <%= f.submit "Add Reply", class: "log-button" %>
  </div>
 
 <% end %>

@@ -1,44 +1,77 @@
-<div class="spacer"></div>
 
-<h2 class="devise-heading">Edit <%= resource_name.to_s.humanize %></h2>
+<div class="edit-page-container">
+  <div class="account-container">
+  <h2 class="devise-heading">Edit <%= resource_name.to_s.humanize %></h2>
 
-<%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
-  <%= devise_error_messages! %>
+  <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
+    <%= devise_error_messages! %>
 
-  <div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true %>
-  </div>
+    <div class="field">
+      <%= f.label :email %><br />
+      <%= f.email_field :email, autofocus: true %>
+    </div>
 
-  <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
-    <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
+    <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
+      <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
+    <% end %>
+
+    <div class="field">
+      <%= f.label :password %> <i>(leave blank if you don't want to change it)</i><br />
+      <%= f.password_field :password, autocomplete: "off" %>
+      <% if @minimum_password_length %>
+        <br />
+        <em><%= @minimum_password_length %> characters minimum</em>
+      <% end %>
+    </div>
+
+    <div class="field">
+      <%= f.label :password_confirmation %><br />
+      <%= f.password_field :password_confirmation, autocomplete: "off" %>
+    </div>
+
+    <div class="field">
+      <%= f.label :current_password %> <i>(we need your current password to confirm your changes)</i><br />
+      <%= f.password_field :current_password, autocomplete: "off" %>
+    </div>
+
+    <div class="button-container-1">
+      <%= f.submit "Update", class: "log-button" %>
+    </div>
   <% end %>
 
-  <div class="field">
-    <%= f.label :password %> <i>(leave blank if you don't want to change it)</i><br />
-    <%= f.password_field :password, autocomplete: "off" %>
-    <% if @minimum_password_length %>
-      <br />
-      <em><%= @minimum_password_length %> characters minimum</em>
-    <% end %>
-  </div>
-
-  <div class="field">
-    <%= f.label :password_confirmation %><br />
-    <%= f.password_field :password_confirmation, autocomplete: "off" %>
-  </div>
-
-  <div class="field">
-    <%= f.label :current_password %> <i>(we need your current password to confirm your changes)</i><br />
-    <%= f.password_field :current_password, autocomplete: "off" %>
-  </div>
-
+  <h3 class="devise-heading">Cancel my account</h3>
   <div class="button-container-1">
-    <%= f.submit "Update", class: "log-button" %>
+  <p><b>WARNING!:</b> The following button will delete your account. This is a irreversible action so be sure it is something you want to do before commiting to it. <%= button_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete, class: "log-button" %></p>
   </div>
-<% end %>
+  </div>
 
-<h3 class="devise-heading">Cancel my account</h3>
-<div class="button-container-1">
-<p><b>WARNING!:</b> The following button will delete your account. This is a irreversible action so be sure it is something you want to do before commiting to it. <%= button_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete, class: "log-button" %></p>
+  <div class="profile-container">
+    <h2 class="devise-heading">Edit Profile</h2>
+    <div class="profile-card">
+      <div class="profile-first-last-name">
+        <%= @user.profile.first_name %> <%= @user.profile.last_name %>
+        <div class="dc-rating">
+          <% if current_user.profile.dev_corner.nil? %>
+          <% else %>
+          Dev Rating:  <%= @user.profile.dev_corner.score %> Stars
+          <% end %>
+        </div>
+      </div>
+      <div class="another-damn-container">
+      <div class="profile-picture">
+        <%= image_tag @user.profile.image, style: "width: 95%; height: auto; padding: 5px; " %>
+      </div>
+      <div class ="profile-info">
+        <p><b>Email:</b> <%= @user.profile.user.email %></p>
+        <p><b>Birthday:</b> <%= @user.profile.birthday %></p>
+        <h4 class="profile-info-desc">About <%= @user.profile.first_name %>:</h4>
+        <%= @user.profile.description %>
+      </div>
+    </div>
+  </div>
+
+      <%= render 'profiles/form', profile: @user.profile %>
+
+
+  </div>
 </div>

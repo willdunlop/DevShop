@@ -1,4 +1,3 @@
-<div class="spacer"></div>
 <%= stylesheet_link_tag dev_corner_path(@dev_corner.user_css_input, "css", id: @dev_corner.profile.id) %>
 
   <style>
@@ -75,6 +74,7 @@
         <%= @dev_corner.score %>
         </div>
       </div>
+      <div class="another-damn-container">
       <div class="profile-picture">
         <%= image_tag @dev_corner.profile.image, style: "width: auto; height: 150px; padding: 5px;" %>
       </div>
@@ -84,8 +84,8 @@
         <h4 class="profile-info-desc">About <%= @dev_corner.profile.first_name %>:</h4>
         <%= @dev_corner.profile.description %>
       </div>
-
     </div>
+  </div>
 
 
   </div>
