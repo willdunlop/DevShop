@@ -1,0 +1,51 @@
+<p id="notice"><%= notice %></p>
+
+<%= @contract.inspect %>
+
+<p>
+  <strong>Profile:</strong>
+  <%= @contract.profile.first_name %>
+</p>
+
+<p>
+  <strong>Dev corner:</strong>
+  <%= @contract.dev_corner.profile.first_name %>
+</p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @contract.name %>
+</p>
+
+<p>
+  <strong>Start date:</strong>
+  <%= @contract.start_date %>
+</p>
+
+<p>
+  <strong>End date:</strong>
+  <%= @contract.end_date %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @contract.description %>
+</p>
+
+<p>
+  <strong>User agree:</strong>
+  <%= @contract.user_agree %>
+</p>
+
+<p>
+  <strong>Dev agree:</strong>
+  <%= @contract.dev_agree %>
+</p>
+
+<p>
+  <strong>Cost:</strong>
+  <%= @contract.cost %>
+</p>
+
+<%= link_to 'Edit', edit_contract_path(@contract) %> |
+<%= link_to 'Back', contracts_path %>

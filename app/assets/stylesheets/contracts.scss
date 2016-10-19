@@ -1,0 +1,41 @@
+// Place all the styles related to the Contracts controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+
+#contract_name, #contract_cost {
+  height: 40px;
+  width: 300px;
+  border-radius: 0;
+  border-style: solid;
+  border-color: #A6728F;
+  background-color: #f6f0f3;
+  box-shadow: 0;
+  text-align: center;
+  transition-duration: 0.5s;
+
+}
+
+#contract_description {
+  width: 90%;
+  height: 350px;
+  color: #000;
+  background-color: #f6f0f3;
+  font-size: 18px;
+  margin: 5px 10px 5px 10px;
+  border-style: solid;
+  border-color: #A6728F;
+  box-shadow: 2px 2px 2px 2px rgba(0,0,0,0.4);
+
+}
+
+.new_contract {
+  width: 40%;
+  margin: 0 auto 0 auto;
+}
+
+.fieldd {
+  width: 80%;
+  margin: 10px auto 10px auto;
+  font-family: 'Raleway', sans-serif;
+}

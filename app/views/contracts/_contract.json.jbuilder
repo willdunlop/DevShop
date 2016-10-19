@@ -1,0 +1,2 @@
+json.extract! contract, :id, :profile_id, :dev_corner_id, :name, :start_date, :end_date, :description, :user_agree, :dev_agree, :cost, :created_at, :updated_at
+json.url contract_url(contract, format: :json)

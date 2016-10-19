@@ -10,10 +10,26 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161014004358) do
+ActiveRecord::Schema.define(version: 20161019013829) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "contracts", force: :cascade do |t|
+    t.integer  "profile_id"
+    t.integer  "dev_corner_id"
+    t.string   "name"
+    t.date     "start_date"
+    t.date     "end_date"
+    t.text     "description"
+    t.boolean  "user_agree"
+    t.boolean  "dev_agree"
+    t.float    "cost"
+    t.datetime "created_at",    null: false
+    t.datetime "updated_at",    null: false
+    t.index ["dev_corner_id"], name: "index_contracts_on_dev_corner_id", using: :btree
+    t.index ["profile_id"], name: "index_contracts_on_profile_id", using: :btree
+  end
 
   create_table "conversations", force: :cascade do |t|
     t.integer  "sender_id"
@@ -96,6 +112,8 @@ ActiveRecord::Schema.define(version: 20161014004358) do
     t.index ["voter_id", "voter_type", "vote_scope"], name: "index_votes_on_voter_id_and_voter_type_and_vote_scope", using: :btree
   end
 
+  add_foreign_key "contracts", "dev_corners"
+  add_foreign_key "contracts", "profiles"
   add_foreign_key "dev_corners", "profiles"
   add_foreign_key "profiles", "users"
 end

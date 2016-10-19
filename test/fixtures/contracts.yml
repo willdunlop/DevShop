@@ -1,0 +1,23 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  profile: one
+  dev_corner: one
+  name: MyString
+  start_date: 2016-10-19
+  end_date: 2016-10-19
+  description: MyText
+  user_agree: false
+  dev_agree: false
+  cost: 1.5
+
+two:
+  profile: two
+  dev_corner: two
+  name: MyString
+  start_date: 2016-10-19
+  end_date: 2016-10-19
+  description: MyText
+  user_agree: false
+  dev_agree: false
+  cost: 1.5

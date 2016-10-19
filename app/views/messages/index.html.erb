@@ -2,8 +2,10 @@
 
 <% if @message.conversation.sender_id == current_user.id %>
   <p class="devise-heading"> Conversation with <%=@message.conversation.recipient.profile.first_name %> </p>
+  <% @otherid = @message.conversation.recipient.profile %>
 <% else %>
   <p class="devise-heading"> Conversation with <%=@message.conversation.sender.profile.first_name %> </p>
+  <% @otherid = @message.conversation.sender.profile %>
 <% end %>
 
 <% if @over_ten %>
@@ -42,6 +44,11 @@
  <%= f.text_field :user_id, value: current_user.id, type: "hidden" %>
  <div class="button-container-1">
    <%= f.submit "Send", class: "log-button" %>
+   <% if current_user.profile.dev_corner.nil? %>
+   <% else %>
+    <%= link_to new_contract_path(:profile_id => @otherid) do %>
+    <div class="edit-button">Begin Contract</div>
+    <%end%>
+   <% end %>
  </div>
-
 <% end %>

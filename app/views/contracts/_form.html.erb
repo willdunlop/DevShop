@@ -1,0 +1,58 @@
+<%= form_for(contract) do |f| %>
+  <% if contract.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(contract.errors.count, "error") %> prohibited this contract from being saved:</h2>
+
+      <ul>
+      <% contract.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+
+
+  <% @pid_security = params[:profile_id] %>
+  <%= f.text_field :profile_id, value: @pid_security, type: "hidden" %>
+
+  <div class="fieldd">
+    <%= f.text_field :name, placeholder: "Project Title" %>
+  </div>
+
+  <div class="fieldd">
+    <%= f.label :start_date %>
+    <%= f.date_select :start_date %>
+  </div>
+
+  <div class="fieldd">
+    <%= f.label :end_date %>
+    <%= f.date_select :end_date %>
+  </div>
+
+  <div class="fieldd">
+    <%= f.label :description %>
+    <%= f.text_area :description %>
+  </div>
+
+  <div class="fieldd">
+    <%= f.label :user_agree %>
+    <%= f.check_box :user_agree %>
+  </div>
+
+  <div class="fieldd">
+    <%= f.label :dev_agree %>
+    <%= f.check_box :dev_agree %>
+  </div>
+
+  <div class="fieldd">
+    <%= f.label :cost %>
+    <%= f.text_field :cost %>
+  </div>
+
+  <div class="fieldd">
+
+    <%= f.submit "Confirm", class: "log-button" %>
+
+  </div>
+<% end %>

@@ -1,5 +1,6 @@
 class DevCorner < ApplicationRecord
   belongs_to :profile
+  has_many :contracts
   acts_as_votable
   def score
     self.find_votes_for.sum(:vote_weight).to_f / self.votes_for.size.to_f
@@ -9,6 +10,6 @@ class DevCorner < ApplicationRecord
     self.order("cached_votes_score DESC")
   end
 
-  
+
 
 end
