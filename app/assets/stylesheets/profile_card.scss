@@ -130,6 +130,15 @@
 
   }
 
+  .no-profile-picture {
+    height: auto;
+    width: 260px;
+    background: image-url('profile-image-default.jpg');
+    padding: 5px;
+    margin: 1%;
+
+  }
+
   .profile-info {
     font-family: 'Montserrat', sans-serif;
 

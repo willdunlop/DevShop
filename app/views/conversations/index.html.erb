@@ -18,16 +18,25 @@
 </div>
 
 
-<div class="segment">
+<div class"contracts-list">
+  <% @num = 1 %>
+  <%if current_user.profile.dev_corner.nil? %>
+  <p class="devise-heading">Your Contracts</p>
+    <% current_user.profile.contracts.each do |contracts| %>
+      <%= "#{@num}. #{contracts.name} with #{contracts.dev_corner.profile.first_name}" %>
+      <% @num = @num + 1 %>
+    <%end%>
+  <%else%>
+    <p class="devise-heading">Your Developer Contracts</p>
+    <% current_user.profile.dev_corner.contracts.each do |contracts| %>
+      <%= "#{@num}. #{contracts.name} with #{contracts.profile.first_name}" %>
+      <% @num = @num + 1 %>
+    <%end%>
+    <p class="devise-heading">Your Contracts with other Devs</p>
+    <% current_user.profile.contracts.each do |contracts| %>
+      <%= "#{@num}. #{contracts.name} with #{contracts.dev_corner.profile.first_name}" %>
+      <% @num = @num + 1 %>
+    <%end%>
+  <%end%>
 
- <h3>All Users</h3>
-  <div class="ui list">
-   <% @users.each do |user| %>
-    <% if user.id != current_user.id %>
-     <div class="item">
-   <%= user.profile.first_name %> <%= link_to 'Message me!', conversations_path(sender_id: current_user.id, recipient_id: user.id), method: 'post'%>
- </div>
-  <% end %>
- <% end %>
- </div>
 </div>

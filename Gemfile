@@ -18,7 +18,9 @@ gem 'coffee-rails', '~> 4.2'
 # gem 'therubyracer', platforms: :ruby
 # Devise used for login and registration of user accounts
 gem 'devise'
-
+#Mailer
+gem 'mail_form'
+gem 'simple_form'
 # carrierwave to handle the uploading of profile pictures
 gem 'carrierwave', '>= 1.0.0.beta', '< 2.0'
 # Codemirror, interface for uses to edit their profile CSS
@@ -44,6 +46,8 @@ gem 'jbuilder', '~> 2.5'
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platform: :mri
+  # For using .env files
+  gem 'foreman'
 end
 
 group :development do

@@ -40,7 +40,10 @@ class ProfilesController < ApplicationController
         format.json { render json: @profile.errors, status: :unprocessable_entity }
       end
     end
+    
   end
+
+
 
   # PATCH/PUT /profiles/1
   # PATCH/PUT /profiles/1.json
