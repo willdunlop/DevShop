@@ -1,6 +1,16 @@
+<%if current_user.id == @contract.dev_corner_id%>
 <h1>Editing Contract</h1>
 
 <%= render 'form', contract: @contract %>
 
 <%= link_to 'Show', @contract %> |
 <%= link_to 'Back', contracts_path %>
+
+<%else%>
+<div class="unauthorised">
+  <p class="unauth-heading"> <b>ACCESS DENIED!</b> </p>
+  You are not authorised to be here and you shouldn't be trying.
+  Your activity has been logged... Papa William is now watching your every move.
+  <p>Tread carefully</p>
+</div>
+<%end%>

@@ -46,6 +46,10 @@
   <strong>Cost:</strong>
   <%= @contract.cost %>
 </p>
+<% contract = @contract %>
+<%if current_user.profile.id == @contract.profile_id%>
+<%= render 'contracts/profileform', profile: contract %>
+<%end%>
 
 <%= link_to 'Edit', edit_contract_path(@contract) %> |
 <%= link_to 'Back', contracts_path %>

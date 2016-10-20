@@ -1,0 +1,24 @@
+<% contract = @contract %>
+<%= form_for(contract) do |f| %>
+  <% if contract.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(contract.errors.count, "error") %> prohibited this contract from being saved:</h2>
+
+      <ul>
+      <% contract.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+
+
+  <div class="fieldd">
+    <%= f.label :user_agree %>
+    <%= f.check_box :user_agree %>
+  </div>
+
+    <%= f.submit "Confirm", class: "log-button" %>
+
+<%end%>

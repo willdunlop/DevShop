@@ -1,3 +1,4 @@
+<% contract = @contract %>
 <%= form_for(contract) do |f| %>
   <% if contract.errors.any? %>
     <div id="error_explanation">
@@ -16,7 +17,8 @@
   <% @pid_security = params[:profile_id] %>
   <%= f.text_field :profile_id, value: @pid_security, type: "hidden" %>
 
-  
+
+
   <div class="fieldd">
     <%= f.text_field :name, placeholder: "Project Title" %>
   </div>
@@ -37,11 +39,6 @@
   </div>
 
   <div class="fieldd">
-    <%= f.label :user_agree %>
-    <%= f.check_box :user_agree %>
-  </div>
-
-  <div class="fieldd">
     <%= f.label :dev_agree %>
     <%= f.check_box :dev_agree %>
   </div>
@@ -50,10 +47,11 @@
     <%= f.label :cost %>
     <%= f.text_field :cost %>
   </div>
-
   <div class="fieldd">
 
     <%= f.submit "Confirm", class: "log-button" %>
 
   </div>
+
+
 <% end %>
