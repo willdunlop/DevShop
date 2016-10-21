@@ -51,7 +51,7 @@
 <%= render 'contracts/profileform', profile: contract %>
 <%end%>
 
-<% @cost = @contract.cost * 100 %>
+<% @cost = @contract.cost %>
 <%if @contract.user_agree == true && @contract.dev_agree == true %>
   <%if current_user.profile.id == @contract.profile_id%>
     <%= link_to 'Pay', new_charge_path(:cost => @cost) %>

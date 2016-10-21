@@ -6,19 +6,19 @@ class ChargesController < ApplicationController
 
   def create
 
-    customer = StripeTool.create_customer(email: params[:stripeEmail],
-                                          stripe_token: params[:stripeToken])
+      customer = StripeTool.create_customer(email: params[:stripeEmail],
+                                            stripe_token: params[:stripeToken])
 
+      charge = StripeTool.create_charge(customer_id: customer.id,
+                                        amount: @amount,
+                                        description: @description)
 
-    charge = StripeTool.create_charge(customer_id: customer.id,
-                                      amount: @amount,
-                                      description: @description)
+      redirect_to thanks_path
+    rescue Stripe::CardError => e
+      flash[:error] = e.message
+      redirect_to new_charge_path
+    end
 
-  redirect_to thanks_path
-  rescue Stripe::CardError => e
-    flash[:error] = e.message
-    redirect_to new_charge_path
-  end
 
   def thanks
   end
@@ -26,7 +26,7 @@ class ChargesController < ApplicationController
   private
 
    def amount_to_be_charged
-     @amount = params[:cost]
+     @amount = (params[:cost].to_i * 100).to_i
    end
 
    def set_description
@@ -34,6 +34,6 @@ class ChargesController < ApplicationController
     end
 
     def charges_params
-      params.require(:charges).permit(:cost)
+      params.require(:charges).permit(:cost, :amount, :description)
     end
 end

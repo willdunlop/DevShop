@@ -11,7 +11,7 @@ module StripeTool
       customer: customer_id,
       amount: amount,
       description: description,
-      currency: 'AUD'
+      currency: 'usd'
     )
   end
 end
