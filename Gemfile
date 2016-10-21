@@ -30,6 +30,10 @@ gem 'acts_as_votable', '~> 0.10.0'
 # Font awesome for star and other icons
 gem "font-awesome-rails"
 gem 'awesome_link'
+# Strip for transactions
+gem 'stripe', git: 'https://github.com/stripe/stripe-ruby'
+# for environment variables
+gem 'dotenv-rails', :groups => [:development, :test]
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
 # Turbolinks makes navigating your web application faster. Read more: https://github.com/turbolinks/turbolinks
@@ -46,8 +50,7 @@ gem 'jbuilder', '~> 2.5'
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platform: :mri
-  # For using .env files
-  gem 'foreman'
+
 end
 
 group :development do

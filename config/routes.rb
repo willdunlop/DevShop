@@ -5,7 +5,8 @@ Rails.application.routes.draw do
   get 'pages/home'
   root 'pages#home'
   devise_for :users
-
+  resources :charges, only: [:new, :create]
+  get 'thanks', to: 'charges#thanks', as: 'thanks'
   resources :conversations do
   resources :messages
  end
