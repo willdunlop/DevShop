@@ -14,6 +14,7 @@ html, body {
   // box-shadow: 0 0 3px 0;
   background-color: #A6728F;
   position: fixed;
+  display: flex;
   margin-top: 0px;
 }
 
@@ -21,11 +22,6 @@ html, body {
   width: 75%;
   height: 100%;
   margin: 0 auto 0 auto;
-  display: flex;
-  display: -webkit-box; /* OLD - iOS 6-, Safari 3.1-6 */
-  display: -moz-box;    /* OLD - Firefox 19- (buggy but mostly works) */
-  display: -ms-flexbox;  /* TWEENER - IE 10 */
-  display: -webkit-flex; /* NEW - Chrome */
 }
 
 .DS-logo {
@@ -33,12 +29,7 @@ html, body {
   background-size: contain;
   width: 250px;
   height: 100%;
-
-}
-
-.nav-space{
-  width: 80%;
-  height: 100%;
+  float: left;
 }
 
 .account-button {
@@ -47,6 +38,7 @@ html, body {
   line-height: 45px;
   font-family: 'Raleway', sans-serif;
   background-color: #A6728F;
+  float: right;
   text-align: center;
   color: #fff;
   transition-duration: 0.5s;
@@ -63,6 +55,7 @@ html, body {
   line-height: 45px;
   font-family: 'Raleway', sans-serif;
   background-color: #A6728F;
+  float: right;
   text-align: center;
   color: #fff;
   transition-duration: 0.5s;
