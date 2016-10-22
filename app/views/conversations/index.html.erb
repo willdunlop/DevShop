@@ -25,13 +25,23 @@
 </div>
 
 
-<div class"contracts-list">
+<div class="contracts-list">
   <% @num = 1 %>
   <%if current_user.profile.dev_corner.nil? %>
   <div class="default-container">
   <p class="devise-heading">Your Contracts</p>
     <% current_user.profile.contracts.each do |contracts| %>
-      <p><%= "#{@num}. #{contracts.name} with #{contracts.dev_corner.profile.first_name}" %> <%= link_to "show", contract_path(id: contracts.id)%></p>
+    <div class="ea-contract">
+      <div class="side-heading">
+      <%= "#{@num}. Name: #{contracts.name}" %>
+    </div>
+    <p class="written-info"> <b>Developer: </b> <%= contracts.dev_corner.profile.first_name %> </p>
+    <p class="written-info"><b>Description: </b><%= contracts.description %></p>
+    <div class="button-container-2">
+      <%= link_to contract_path(id: contracts.id) do%>
+        <div class="contract-button">View</div>
+      <%end%>
+    </div>
       <% @num = @num + 1 %>
     <%end%>
   </div>
@@ -39,14 +49,44 @@
   <div class="default-container">
     <p class="devise-heading">Your Developer Contracts</p>
     <% current_user.profile.dev_corner.contracts.each do |contracts| %>
-      <p><%= "#{@num}. #{contracts.name} with #{contracts.profile.first_name}" %> <%= link_to "edit", edit_contract_path(id: contracts.id)%> <%= link_to "show", contract_path(id: contracts.id)%> <%= link_to "Delete", contract_path(id: contracts.id), format: 'delete'%></p>
+    <div class="ea-contract">
+      <div class="side-heading">
+         <%= "#{@num}. Name: #{contracts.name}" %>
+        </div>
+       <p class="written-info"><b>Client: </b><%= contracts.profile.first_name %></p>
+       <p class="written-info"><b>Description: </b><%= contracts.description %></p>
+       <div class="button-container-2">
+       <%= link_to edit_contract_path(id: contracts.id) do%>
+        <div class="contract-button">Edit</div>
+      <%end%>
+       <%= link_to contract_path(id: contracts.id) do%>
+         <div class="contract-button">View</div>
+       <%end%>
+       <%= link_to contract_path(id: contracts.id), :method => 'delete' do%>
+         <div class="contract-button">Delete</div>
+       <%end%>
+     </div>
+     </div>
+
       <% @num = @num + 1 %>
     <%end%>
+
+
   </div>
   <div class="default-container">
     <p class="devise-heading">Your Contracts with other Devs</p>
     <% current_user.profile.contracts.each do |contracts| %>
-      <p><%= "#{@num}. #{contracts.name} with #{contracts.dev_corner.profile.first_name}" %> <%= link_to "show", contract_path(id: contracts.id)%></p>
+    <div class="ea-contract">
+      <div class="side-heading">
+      <%= "#{@num}. Name: #{contracts.name}" %>
+    </div>
+    <p class="written-info"> <b>Developer: </b> <%= contracts.dev_corner.profile.first_name %> </p>
+    <p class="written-info"><b>Description: </b><%= contracts.description %></p>
+    <div class="button-container-2">
+      <%= link_to contract_path(id: contracts.id) do%>
+        <div class="contract-button">View</div>
+      <%end%>
+    </div>
       <% @num = @num + 1 %>
     <%end%>
   </div>

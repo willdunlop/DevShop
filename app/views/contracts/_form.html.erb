@@ -13,9 +13,12 @@
   <% end %>
 
 
-
+<%if params[:profile_id].nil?%>
+  <% params[:profile_id] = @pid_security %>
+<%else%>
   <% @pid_security = params[:profile_id] %>
   <%= f.text_field :profile_id, value: @pid_security, type: "hidden" %>
+<%end%>
 
 
 

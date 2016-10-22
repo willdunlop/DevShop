@@ -1,10 +1,8 @@
 <%if current_user.id == @contract.dev_corner_id%>
-<h1>Editing Contract</h1>
+<h1 class="devise-heading">Editing Contract</h1>
 
 <%= render 'form', contract: @contract %>
 
-<%= link_to 'Show', @contract %> |
-<%= link_to 'Back', contracts_path %>
 
 <%else%>
 <div class="unauthorised">

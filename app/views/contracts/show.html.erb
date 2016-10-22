@@ -1,59 +1,39 @@
 <p id="notice"><%= notice %></p>
 
-<%= @contract.inspect %>
 
-<p>
-  <strong>Profile:</strong>
-  <%= @contract.profile.first_name %>
-</p>
-
-<p>
-  <strong>Dev corner:</strong>
-  <%= @contract.dev_corner.profile.first_name %>
-</p>
-
-<p>
-  <strong>Name:</strong>
-  <%= @contract.name %>
-</p>
-
-<p>
-  <strong>Start date:</strong>
-  <%= @contract.start_date %>
-</p>
-
-<p>
-  <strong>End date:</strong>
-  <%= @contract.end_date %>
-</p>
-
-<p>
-  <strong>Description:</strong>
-  <%= @contract.description %>
-</p>
-
-<p>
-  <strong>User agree:</strong>
-  <%= @contract.user_agree %>
-</p>
-
-<p>
-  <strong>Dev agree:</strong>
-  <%= @contract.dev_agree %>
-</p>
-
-<p>
-  <strong>Cost:</strong>
-  <%= @contract.cost %>
-</p>
-<% contract = @contract %>
-<%if current_user.profile.id == @contract.profile_id%>
-<%= render 'contracts/profileform', profile: contract %>
-<%end%>
 
 <% @cost = @contract.cost %>
 <%if @contract.user_agree == true && @contract.dev_agree == true %>
   <%if current_user.profile.id == @contract.profile_id%>
-    <%= link_to 'Pay', new_charge_path(:cost => @cost) %>
+    <%= link_to  new_charge_path(:cost => @cost) do%>
+    <div class="pay-button">Process Payment</div>
   <%end%>
+  <%end%>
+<%end%>
+
+<div class="contract-container">
+  <div class="contract-title"> Title: <%= @contract.name %> </div>
+  <div class="contract-body">
+    <div class="body-top">
+      <p class="contract-info">Client:   <%= @contract.profile.first_name %></p>
+      <p class="contract-info">Developer:   <%= @contract.dev_corner.profile.first_name %></p>
+      <p class="contract-info">Start Date:   <%= @contract.start_date %></p>
+      <p class="contract-info">End Date:   <%= @contract.end_date %></p>
+      <p class="contract-desc">Description:    <%= @contract.description %></p>
+    </div>
+    <div class="body-bot">
+      <p class="contract-info">Cost:  $ <%= @contract.cost %></p>
+      <p class="contract-info">Signed by Client:    <%= @contract.user_agree %> </p>
+      <p class="contract-info">Signed by Developer:    <%= @contract.dev_agree %> </p>
+    </div>
+  </div>
+</div>
+
+
+
+<% contract = @contract %>
+<%if current_user.profile.id == @contract.profile_id%>
+<div class="button-container-2">
+<%= render 'contracts/profileform', profile: contract %>
+</div>
 <%end%>

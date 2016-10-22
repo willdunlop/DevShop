@@ -1,6 +1,6 @@
 
 <%if current_user.profile.dev_corner.id == @dev_corner.id %>
-<h1>Editing Dev Corner</h1>
+<h1 class="devise-heading">Editing Dev Corner</h1>
 
   <%= render 'form', dev_corner: @dev_corner %>
 <% else %>
