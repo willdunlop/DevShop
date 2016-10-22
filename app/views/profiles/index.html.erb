@@ -1,39 +1,46 @@
 
 <p id="notice"><%= notice %></p>
 
-<h1>Profiles</h1>
 
-<table>
-  <thead>
-    <tr>
-      <th>User</th>
-      <th>Email</th>
-      <th>First name</th>
-      <th>Last name</th>
-      <th>Birthday</th>
-      <th>Description</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
 
-  <tbody>
+<h1 class="shops-heading">The Shops</h1>
+
+
     <% @profiles.each do |profile| %>
+    <div class="card-seperator"></div>
+
     <% if profile.dev_corner.nil? %>
     <% else %>
-      <tr>
-        <td><%= profile.user %></td>
-        <td><%= profile.user.email %></td>
-        <td><%= profile.first_name %></td>
-        <td><%= profile.last_name %></td>
-        <td><%= profile.birthday %></td>
-        <td><%= profile.description %></td>
-        <td><%= link_to 'Show', profile %></td>
-        <td><%= link_to 'Edit', edit_profile_path(profile) %></td>
-      </tr>
+    <div class="dc-index-container">
+    <div class="shop-bg"></div>
+      <div class="profile-card">
+        <div class="profile-first-last-name">
+          <% if profile.dev_corner.nil? %>
+          <% else %>
+            <div class="certified"></div>
+            <div class="certified-label">Certified Developer</div>
+          <% end %>
+          <%= profile.first_name %> <%=  profile.last_name %>
+          <div class="dc-rating">
+            Dev Rating:  <%=  profile.dev_corner.score %> Stars
+          </div>
+        </div>
+        <div class="another-damn-container">
+        <div class="profile-picture">
+          <%= image_tag  profile.image, style: "width: 95%; height: auto; padding: 5px;" %>
+        </div>
+        <div class ="profile-info">
+          <p><b>Email:</b> <%=  profile.user.email %></p>
+          <p><b>Birthday:</b> <%=  profile.birthday %></p>
+          <h4 class="profile-info-desc">About <%=  profile.first_name %>:</h4>
+          <%=  profile.description %>
+        </div>
+      </div>
+    </div>
+
+           <%= link_to  dev_corner_path(id: profile.dev_corner.id) do%>
+           <div class="edit-button">View</div>
+           <% end %>
+         </div>
       <% end %>
-
     <% end %>
-  </tbody>
-</table>
-
-<br>

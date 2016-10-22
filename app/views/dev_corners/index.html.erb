@@ -8,11 +8,11 @@
 
 <% if @profiles.present? %>
   <% if @profiles.dev_corner.nil? %>
+  <p>There are no Developers containing the term(s) <%= params[:search] %>.</p>
   <% else %>
     <%= render @profiles %>
     <% end %>
   <% else %>
-    <p>There are no Developers containing the term(s) <%= params[:search] %>.</p>
 <% end %>
 
 <h1 class="shops-heading">The Shops</h1>
