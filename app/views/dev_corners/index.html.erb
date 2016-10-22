@@ -5,7 +5,7 @@
 <%= text_field_tag :search, params[:search], placeholder: "Search Devs" %>
 <%= submit_tag "Search" %>
 <% end %>
-
+ 
 <% if @profiles.present? %>
   <% if @profiles.dev_corner.nil? %>
   <p>There are no Developers containing the term(s) <%= params[:search] %>.</p>
