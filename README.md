@@ -2,10 +2,10 @@
 
 ![Alt tag](app/assets/images/DS-Logo-Transparent-Full.png?raw=true "Title")
 
-# A Web Application by William Dunlop
+<h3> A Web Application by William Dunlop </h3>
 
 
-<h3><u> Summary </u></h3>
+# Summary
 
 <h5>The Problem</h5>
 The internet has seen a rise in popularity throughout the 21st century and continues to grow with no signs of slowing down. This has made it a desirable platform for an individual or company to present themselves and get involved with the many online communities that have formed over the years. It can be quite easy for a user to create an online presence with the assistance of  services such as Facebook, Twitter, LinkedIn and more. These services however limit the user’s online presence to the format that comes with these platforms. If a user wanted to create their own website, they would have to find someone capable enough to make it for them or learn the process themself. Both of these options can be a tiresome process, especially if the user knows very little about web design.
@@ -14,7 +14,7 @@ The internet has seen a rise in popularity throughout the 21st century and conti
 DevShop aims to solve this issue by presenting the user with a two sided marketplace that feels very similar to that of current social media trends but also offers the ability for those to show of their creative skills with web development. A user friendly experience has been made that connects those who wish to create a website or application with those who are able to deliver such a demand. With DevShop, a web developer is able to customise their profile with custom HTML and CSS code. This allows for complete freedom when trying to demonstrate their knowledge of the field and allows them a place where they can be compared with their competitors. As these developers try to sell their services, a buyer is able to broswe through the many different profiles in search for one that catches their interest. The buyer is then able to get in contact with the developer and discuss what it is they desire. If the developer and client can agree on a project, a binding contract can be made between them. 
 
 
-<h3><u>Project Details</u></h3>
+# Project Details
 
 - <b>Ruby: </b> v2.3.1p112
 - <b>Rails: </b> 5.0.0.1
@@ -37,8 +37,7 @@ DevShop aims to solve this issue by presenting the user with a two sided marketp
 - <b>Mailgun: </b>Used for sending emails to users such as reciepts or forgotten password requests
 
 
-<h3><u> User Journey's </u></h3>
-
+# User Journey's
 <h5>The Buyer</h5>
 The following is an example for a buyer's typical user Journey
 
@@ -49,8 +48,7 @@ The following is an example for a developer's typical user Journey
 
 ![Alt tag](app/assets/images/Developer-User-Story.JPG?raw=true "Developer Journey")
 
-
-<h3><u>Wireframes</u></h3>
+# Wireframes
 
 <h5>Log In Page</h5>
 ![Alt tag](app/assets/images/Wireframes/Log-in.JPG?raw=true "Log In")
@@ -68,6 +66,6 @@ The following is an example for a developer's typical user Journey
 ![Alt tag](app/assets/images/Wireframes/Edit-Profile.JPG?raw=true "User/Profile Edit Page")
 
 
-<h3><u>Entity Relationship Diagram</u></h3>
-![Alt tag](app/assets/images/ERDs/ERD-2.JPG?raw=true "ERD")
+# Entity Relationship Diagram
+![Alt tag](app/assets/images/ERDs/ERD-1.JPG?raw=true "ERD")
 
