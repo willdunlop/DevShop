@@ -69,3 +69,6 @@ The following is an example for a developer's typical user Journey
 # Entity Relationship Diagram
 ![Alt tag](app/assets/images/ERDs/ERD - 1.JPG?raw=true "ERD")
 
+
+# Heroku Deployed App
+A live version of DevShop can be found at https://www.devshopp.herokuapp.com
