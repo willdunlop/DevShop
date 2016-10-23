@@ -30,6 +30,8 @@ gem 'acts_as_votable', '~> 0.10.0'
 # Font awesome for star and other icons
 gem "font-awesome-rails"
 gem 'awesome_link'
+# Cancan for admin privelages
+gem "cancan"
 # Strip for transactions
 gem 'stripe', git: 'https://github.com/stripe/stripe-ruby'
 # for environment variables

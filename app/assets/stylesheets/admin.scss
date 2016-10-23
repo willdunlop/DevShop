@@ -1,0 +1,45 @@
+
+
+
+#admin-panel{
+  height: 600px;
+  width: 150px;
+  margin: 50px 10px 10px 10px;
+  float:left;
+  position: fixed;
+  padding: 5px;
+  border-color: #A6728F;
+  border-style: solid;
+  background-color: #f6f0f3;
+  box-shadow: 2px 2px 2px 2px rgba(0,0,0,0.4);
+}
+
+.admin-button {
+  width: 125px;
+  height: 50px;
+  background-color: #A6728F;
+  font-family: 'Raleway', sans-serif;
+  font-size: 14px;
+  color: #fff;
+  box-shadow: 2px 2px 2px 2px rgba(0,0,0,0.4);
+  border: none;
+  text-align: center;
+  line-height: 45px;
+  transition-duration: 0.5s;
+  margin: 10px auto 10px auto;
+}
+  .admin-button:hover {
+    background-color: #A52D34;
+  }
+
+.user-box{
+  width: 90%;
+  height: 100px;
+  overflow:auto;
+  border-color: #A6728F;
+  border-style: solid;
+  border-width: thin;
+  margin: 10px auto 10px auto;
+
+
+}

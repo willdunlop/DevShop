@@ -1,0 +1,16 @@
+
+<div class="min"> </div>
+<div id="admin-panel">
+  <p class="side-heading"><b>Admin Panel</b></p>
+<%= link_to contracts_path do %>
+  <div class="admin-button">Contracts</div>
+<%end%>
+
+<b>Users:</b>
+<div class="user-box">
+  <% User.all.each do |u|%>
+  <p><%= "#{u.profile.first_name} = #{u.id}" %></p>
+  <%end%>
+</div>
+
+</div>
